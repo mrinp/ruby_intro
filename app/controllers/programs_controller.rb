@@ -2,15 +2,35 @@ class ProgramsController < ApplicationController
   def home
     # Your code goes below.
 
-    @your_output = "Replace this string with your output"
+    my_birthday = Time.parse("April 18th, 1900")
+    today = Time.now
+    seconds_since_i_was_born = today - my_birthday
+
+    @your_output = seconds_since_i_was_born
+
+    first = "Mrin"
+    last = "Patil"
+
+    @first_then_last = first + " " + last
+
+    @last_then_first = last + ", " + first
 
     render("programs/home.html.erb")
+
   end
 
   def first_program
     # Your code goes below.
 
-    @your_output = "Replace this string with your output"
+    a = []                    # Starting off an empty array
+
+    while a.length < 3
+      new_element = rand(100)
+      a.push(new_element)
+    end
+
+    len = a.length
+    @your_output = a
 
     render("programs/first_program.html.erb")
   end
